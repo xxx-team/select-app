@@ -1,0 +1,72 @@
+user
+{
+	"_id": "Mongo's _id",
+	"root": true,
+	"fistname":"myfirstname",
+	"lastname":"mylastname",
+	"username": "name",
+	"password": "password",
+	"email": "email",
+	"active": true
+}
+
+reader
+{
+	"id":"id",
+	"name":"name",
+	"email":"email",
+}
+
+category
+{
+	"id":"id",
+	"name":"name",
+	"description":"description"
+}
+
+
+image
+{
+	"id":"id",
+	"name":"name",
+	"path":"path",
+}
+paragraph
+{
+	"id":"id",
+	"content":"content"
+}
+comment
+{
+	"id":"id",
+	"reader":"reader_id",
+	"content":"content",
+	"reply":["reply_id"],
+	"like-count":"like-number"
+}
+reply
+{
+	"id":"id",
+	"reader":"reader_id",
+	"content":"content"
+}
+article content
+{
+	"id": "id",
+	"like":["reader.id"],
+	"paragraph-image":["paragraph_id","image_id"],
+	"comments":["comment_id"]
+}
+
+article
+{
+	"id": "id",
+	"title": "title",
+	"description":"description",
+	"like_number":"link number",
+	"comment_count":"commnet_number",
+	"author": "user_id",
+	"category_id": "category_id", 
+	"thumble-image": "image",
+	"content": "content_id"
+}

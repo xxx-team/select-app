@@ -1,0 +1,16 @@
+extends ../layout
+block content
+		form#informationform(name='signupform',method='post',action='/users/update/#{user._id}')
+			input#firstname(name='firstname',type='text',placeholder='your firstname')
+			input#lastname(name='lastname',type='text',placeholder='your lastname')
+			input#email(name='email',type='text',placeholder='your email')
+			button#btnSubmit(type="submit") update
+
+		form#changepasswordform(name='changepasswordform',method='post',action='/users/changepassword/#{user._id}')
+			input#oldpassword(name='oldpassword',type='text',placeholder='old password')
+			input#newpassword(name='newpassword',type='text',placeholder='new password')
+			input#retypenewpassword(name='renewpassword',type='text',placeholder='retype new password')
+			button#btnSubmit(type="submit") change password
+		
+		form#blocktheuser
+		p add to root user
