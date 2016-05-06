@@ -1,0 +1,13 @@
+extends ../layout
+block content
+	if user.root
+		br
+		a(href="/users") manage users
+		br
+		a(href="#") manage article
+		br
+	a(href="/users/profile") profile and password setting 
+	br
+	a(href="#") your articles
+	br
+	a(href="#") write new artical

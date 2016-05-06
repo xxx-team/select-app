@@ -3,10 +3,18 @@ block content
 	if error 
 		p=error
 	form#signupform(name='signupform',method='post',action='/users/signup')
-		input#firstname(name='firstname',type='text',placeholder='your firstname')
-		input#lastname(name='lastname',type='text',placeholder='your lastname')
-		input#email(name='email',type='text',placeholder='your email')
-		input#username(name='username',type='text',placeholder='your username')
-		input#password(name='password',type='password',placeholder='your password')
-		input#confirmpassword(name='password_confirmation',type='password',placeholder='retype your password')
-		button#btnSubmit(type="submit") submit
+		p Firstname:
+			input#firstname(name='firstname',type='text',placeholder='your firstname')
+		p Lastname:
+			input#lastname(name='lastname',type='text',placeholder='your lastname')
+		p Pen-name:
+			input#penname(name='penname',type='text',placeholder='your pen-name')
+		p Email:	
+			input#email(name='email',type='text',placeholder='your email')
+		p Username:
+			input#username(name='username',type='text',placeholder='your username')
+		p Password:
+			input#password(name='password',type='password',placeholder='your password')
+		p Verify password:
+			input#confirmpassword(name='password_confirmation',type='password',placeholder='retype your password')
+		button#btnSubmit(type="submit") register

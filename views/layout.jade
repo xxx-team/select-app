@@ -6,4 +6,7 @@ html
     <link rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 
   body
+    if user
+        h3="welcome "+user.username
+        a(href="/users/logout") logout
     block content

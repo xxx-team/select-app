@@ -1,6 +1,11 @@
 extends layout
 block content
+	if message
+		p=message
 	form#loginform(name='loginform',method='post',action='/users/login')
-		input#username(name='username',type='text',placeholder='your username')
-		input#password(name='password',type='password',placeholder='password')
-		button#btnSubmit(type="submit") submit
+		p Username:
+			input#username(name='username',type='text',placeholder='your username')
+		p Password:
+			input#password(name='password',type='password',placeholder='password')
+		button#btnSubmit(type="submit") login
+	a(href="/users/signup") you can register a account here.

@@ -1,4 +1,6 @@
 -npm install connect-mongo
 -npm install express-session
--cannot use session
--requireuser not use session ?? where it from
+-cannot use session //solve
+-requireuser not use session ?? where it from  //to faster in session just store username
+-redirect the request url?  // give it specific link
+-it's not update session
