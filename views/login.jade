@@ -1,11 +1,11 @@
 extends layout
 block content
 	if message
-		p=message
+		#messages
+			p=message
 	form#loginform(name='loginform',method='post',action='/users/login')
-		p Username:
-			input#username(name='username',type='text',placeholder='your username')
-		p Password:
-			input#password(name='password',type='password',placeholder='password')
-		button#btnSubmit(type="submit") login
-	a(href="/users/signup") you can register a account here.
+		h3 Login
+		input#username(name='username',type='text',placeholder='Username')
+		input#password(name='password',type='password',placeholder='Password')
+		button#btnSubmit(type="submit") Login
+		a#signup(href="/users/signup") Create an account.

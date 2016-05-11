@@ -91,7 +91,7 @@ router.post('/login', function(req, res){
       else
         res.render('usermanage/block')
     } else {
-      res.render('login', {message: "username and password invalid"});
+      res.render('login', {message: "Incorrect username or password."});
     }
   });
 });

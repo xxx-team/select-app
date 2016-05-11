@@ -3,6 +3,119 @@ body {
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #00B7FF;
+#loginform {
+  box-sizing: border-box;
+	width: 260px;
+	margin: 100px auto 0;
+	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+	padding-bottom: 40px;
+  border-radius: 3px;
+}
+
+#loginform h3 {
+	box-sizing: border-box;
+	padding: 35px 100px;
+	height: 100px;
+  width: 100%;
+  background: #6666cc;
+  color: white;
+  line-height: 150%;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+#loginform input {
+  margin: 40px 25px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #6666cc;
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #6666cc 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+}
+
+#loginform button {
+	border: none;
+  background: #6666cc;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-left: 25px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#signup {
+	color: #00b7ff;
+	padding: 5px 65px;
+}
+
+#messages {
+	box-sizing: border-box;
+	margin: 20px auto -70px;
+	padding: 10px 20px;
+	height: 40px;
+  width: 260px;
+  background: #ffdfe5;
+  color: #cc3333;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+
+}
+
+#signupform {
+	box-sizing: border-box;
+	width: 260px;
+	margin: 10px auto 0;
+	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+	padding-bottom: 40px;
+  border-radius: 3px;
+}
+
+#signupform h3 {
+	box-sizing: border-box;
+	padding: 30px 80px;
+	height: 100px;
+  width: 100%;
+  background: #00b7ff;
+  color: white;
+  line-height: 150%;
+  border-radius: 3px 3px 0 0;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
+#signupform input {
+	margin: 25px 25px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #00b7ff;
+  transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #00b7ff 4%);
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  background-repeat: no-repeat;
+  color: #0e6252;
+}
+
+#signupform button {
+	border: none;
+  background: #00b7ff;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-left: 25px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
