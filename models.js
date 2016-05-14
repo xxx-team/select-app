@@ -60,12 +60,13 @@ mongoose.model('ArticleContent',ArticleContent);
 var article= new Schema({
 	title:String,
 	description:String,
-	linkNumber:Number,
+	likeNumber:Number,
 	commentCount:Number,
 	author:Schema.ObjectId,
 	category:Schema.ObjectId,
 	thumbleImage:Schema.ObjectId,
+	published:Boolean,
 	content:Schema.ObjectId
 },{collection:'article'});
 
-mongoose.model('ArticleContent',ArticleContent);
+mongoose.model('article',article);

@@ -12,14 +12,14 @@ user
 
 reader
 {
-	"id":"id",
+	"id":"_id",
 	"name":"name",
 	"email":"email",
 }
 
 category
 {
-	"id":"id",
+	"id":"_id",
 	"name":"name",
 	"description":"description"
 }
@@ -68,5 +68,6 @@ article
 	"author": "user_id",
 	"category_id": "category_id", 
 	"thumble-image": "image",
+	"published":false,
 	"content": "content_id"
 }

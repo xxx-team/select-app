@@ -20,6 +20,7 @@ function requireRootUser(req, res, next){
     next();
   }
 }
+
 router.get('/home',requireUser,function(req,res){
 	res.render('usertask/home',{user:req.session.user});
 });
