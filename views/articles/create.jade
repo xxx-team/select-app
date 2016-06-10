@@ -1,0 +1,22 @@
+extends ../layout
+block content
+    body#bodywrite
+    h3#writearticle Write a article
+    form#createform(name='createform',method='post',enctype="multipart/form-data",action='/article/create_article')
+        input#title(name='title',type='text',placeholder='Title')
+        br
+        input#description(name='description',type='text',placeholder='Description')
+        br
+        input#thumbleImage(name='thumbnail',type='file',placeholder='ThumbleImage')
+        br
+        select#select(name="cagegory") se
+            each cate,i in category
+                option(value=cate)=cate
+        br
+        input#paragraph(name='paragraph',type='text area',placeholder='Content')
+        br
+        //- input#describeimage(name='describeimage',type='file',placeholder='describeimage')
+        //- button#add(type="button" class="btn btn-default btn-sm")
+        //-     span(class="glyphicon glyphicon-plus")
+        br
+        button#submit(name='submit',type='submit') Submit

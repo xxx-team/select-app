@@ -1,24 +1,164 @@
-extends layout
-
+extend layout2
 block content
-  h1
-    
-  <div>
-  <nav class="navbar navbar-default">
-  <div class="container-fluid">
-  <div class="navbar-header">
-  <a class="navbar-brand" href="#">HOME</a>
-  </div>
-  <ul class="nav navbar-nav">
-  <li class="#"><a href="#">Page 0</a></li>
-  <li><a href="#">Page 1</a></li>
-  <li><a href="#">Page 2</a></li>
-  <li><a href="#">Page 3</a></li>
-  </ul>
-  </div>
-  </nav>
-  </div>
+  header
+    .header
+      .fb-button
+        #fb-root
+        script.
+          (function (d, s, id) {
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) return;
+          js = d.createElement(s);
+          js.id = id;
+          js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        .fb-like(data-layout='button_count', data-href='https://web.facebook.com/B%C3%A1o-M%E1%BB%9Bi-H%C3%B4m-Nay-1011030838965011/?ref=ts&fref=ts/')
+        .fb-share-button(data-href='https://web.facebook.com/B%C3%A1o-M%E1%BB%9Bi-H%C3%B4m-Nay-1011030838965011/?ref=ts&fref=ts/', data-layout='button')
+      a.h1(href='https://web.facebook.com/B%C3%A1o-M%E1%BB%9Bi-H%C3%B4m-Nay-1011030838965011/?ref=ts&fref=ts') Báo Mới 
+      //- p bao moi
+      .navbar-home
+        nav.nav-links
+          a.home(href='/') Trang chủ
+          a.types(href='#') Hot
+          a.types(href='#') Xã Hội
+          a.types(href='#') Thế Giới
+          a.types(href='#') Văn Hóa
+          a.types(href='#') Kinh Tế
+          a.types(href='#') Giáo Dục
+          a.types(href='#') Thể Thao
+          a.types(href='#') Khoa Học - Công Nghệ
+          a.lists(href='/tat-ca') Tất cả
+        .search-button
+          .input-group
+            input#search.form-control(type='text', placeholder='Tìm kiếm...', style='font-size: 16px')
+            span.input-group-btn
+              button#search-button.btn.btn-default(type='button')
+                i.fa.fa-search(style='color:#FFF')
+  body
+    .main
+      .article-list.homepage
+        div.grid-item
+            a(href='/nguyen-nhan-ca-chet-o-ho-hoang-cau-ha-noi-la-do-thoi-tiet/r/19581340.epi', title='Nguyên nhân cá chết ở hồ Hoàng Cầu (Hà Nội) là do thời tiết?', target='_blank')
+            figure
+                img.img(src='http://2.i.baomoi.xdn.vn/m450x/16/06/09/94/19581340/1_82483.jpg', alt='Nguyên nhân cá chết ở hồ Hoàng Cầu (Hà Nội) là do thời tiết?')   
+            header
+              h2 Nguyên nhân cá chết ở hồ Hoàng Cầu (Hà Nội) là do thời tiết?
+            p.meta
+                span VOV
+                time.friendly(datetime='2016-06-09T11:24:00+07:00') 2 giờ trước
+            p.summary
+                | Ông Trịnh Ngọc Sơn: Nguyên nhân rất khó trả lời vì các cơ quan chức năng đang làm rõ nhưng theo phán đoán có...
+            p.tools
+                a.relate 58 tin liên quan
+                a.like(href='/#')
+                    i.spr.spr-like
+                span 11  
+        div.grid-item
+            a(href='/chong-san-phu-to-bac-si-tac-trach-khien-con-minh-tu-vong/r/19581862.epi', title="Chồng sản phụ 'tố' bác sĩ tắc trách khiến con mình tử vong", target='_blank')
+            figure
+                img.img(data-src='http://2.i.baomoi.xdn.vn/m150/16/06/09/3/19581862/1_75308.jpg', src='http://2.i.baomoi.xdn.vn/m450x/16/06/09/3/19581862/1_75308.jpg.webp', alt="Chồng sản phụ 'tố' bác sĩ tắc trách khiến con mình tử vong")
+            header
+                h2 Chồng sản phụ 'tố' bác sĩ tắc trách khiến con mình tử vong
+                p.meta
+                  span Lao Động
+                  time.friendly(datetime='2016-06-09T13:06:00+07:00') 1 giờ trước
+                p.summary
+                  | Hai trẻ sinh đôi 3 ngày tuổi có biểu hiện bất thường, gia đình xin chuyển lên tuyến trên, nhưng bác sĩ không...
+        
+        div.grid-item
+            a(href='/article/docbao', title="Midu: 'Tôi sẽ biến mình từ pha lê thành kim cương'")
+            figure
+                img.img(data-src='http://2.i.baomoi.xdn.vn/m150/16/06/09/200/19582018/1_90813.jpg', src='http://2.i.baomoi.xdn.vn/m450x/16/06/09/200/19582018/1_90813.jpg.webp', alt="Midu: 'Tôi sẽ biến mình từ pha lê thành kim cương'")
+            header
+                h2 Midu: 'Tôi sẽ biến mình từ pha lê thành kim cương'
+                p.meta
+                  span iOne
+                  time.friendly(datetime='2016-06-09T13:42:00+07:00') 1 giờ trước
+                p.summary
+                  | Midu tự nhận bản thân thuộc tuýp người yếu đuối nhưng khi cần mạnh mẽ, bản lĩnh thì cô sẵn sàng vì điều đó mới...
+            a(href='/article/docbao') đọc bài này
+        div.grid-item
+            a(href='/anh-thu-top-5-hoa-khoi-ao-dai-cam-thay-may-man-vi-khong-bi-ai-choi-xau/r/19582353.epi', title='Anh Thư Top 5 Hoa khôi áo dài: Cảm thấy may mắn vì không bị ai "chơi xấu"', target='_blank')
+            figure
+                img.img(data-src='http://1.i.baomoi.xdn.vn/m150/16/06/09/170/19582353/1_237281.jpg', src='http://1.i.baomoi.xdn.vn/m450x/16/06/09/170/19582353/1_237281.jpg.webp', alt='Anh Thư Top 5 Hoa khôi áo dài: Cảm thấy may mắn vì không bị ai "chơi xấu"', width='278', height='417')
+               
+            header
+                h2 Anh Thư Top 5 Hoa khôi áo dài: Cảm thấy may mắn vì không bị ai "chơi xấu"
+                p.meta
+                  span ĐS&PL
+                  time.friendly(datetime='2016-06-09T14:20:00+07:00') 35 phút trước
+                p.summary
+                  | Anh Thi - cô gái 18 tuổi đến từ Hà Nội mới chập chững vào nghề người mẫu và lần đầu tiên tham dự một cuộc thi...
+        div.grid-item
+            a(href='/vu-nguoi-dao-vang-bi-mac-ket-da-dua-thi-the-nan-nhan-thu-hai-len-khoi-hang/r/19582124.epi', title='Vụ người đào vàng bị mắc kẹt: Đã đưa thi thể nạn nhân thứ hai lên khỏi hang', target='_blank')
+            figure
+                img.img(data-src='http://3.i.baomoi.xdn.vn/m150/16/06/09/3/19582124/1_84891.jpg', src='http://3.i.baomoi.xdn.vn/m450x/16/06/09/3/19582124/1_84891.jpg.webp', alt='Vụ người đào vàng bị mắc kẹt: Đã đưa thi thể nạn nhân thứ hai lên khỏi hang', width='278', height='156')
+            header
+                h2 Vụ người đào vàng bị mắc kẹt: Đã đưa thi thể nạn nhân thứ hai lên khỏi hang
+                p.meta
+                  span Lao Động
+                  time.friendly(datetime='2016-06-09T14:00:00+07:00') 55 phút trước
+                p.summary
+                  | 13h04' trưa nay (9.6), thi thể ông ông Phạm Văn Bảy (SN 1962, ngụ xã Lâm Xa, huyện Bá Thước, tỉnh Thanh Hóa)...
 
-
-
-  <div class="block-feature"><a class="img_490_276" title="Hối lộ CSGT &quot;rẻ hơn, đỡ mất công đi đóng phạt&quot;?" href="http://tuoitre.vn/tin/ban-doc/tieu-diem/20160307/hoi-lo-csgt-re-hon-do-mat-cong-di-dong-phat/1062337.html"><img src="http://static.new.tuoitre.vn/tto/i/s490/2016/03/07/images-1457308112.jpg" alt="Hối lộ CSGT &amp;quot;rẻ hơn, đỡ mất công đi đóng phạt&amp;quot;?"></a><h1><a title="Hối lộ CSGT &quot;rẻ hơn, đỡ mất công đi đóng phạt&quot;?" href="http://tuoitre.vn/tin/ban-doc/tieu-diem/20160307/hoi-lo-csgt-re-hon-do-mat-cong-di-dong-phat/1062337.html">Hối lộ CSGT "rẻ hơn, đỡ mất công đi đóng phạt"?<span class="i-comments"><i class="fa fa-comments"></i> 81</span><span class="i-audios"><i class="fa fa-volume-up"></i></span></a></h1><p>TTO - Một bạn đọc cho rằng người vi phạm giao thông ngại nộp phạt đúng luật vì “hối lộ rẻ hơn, đỡ mất công đi đóng phạt” nhưng cũng nói thêm: &nbsp;"Nếu đã vi phạm luật giao thông thì tại sao lại ngại nộp phạt cho Nhà nước?".&nbsp;</p></div>
+        div.grid-item
+            a(href='/tai-sao-ngong-cuong-la-vay-thanh-chui-dat-bac-ninh-van-chua-bi-so-gay/r/19581782.epi', title="Tại sao ngông cuồng là vậy, 'Thánh chửi' đất Bắc Ninh vẫn chưa bị... 'sờ gáy'?", target='_blank')
+            figure
+                img.img(data-src='http://3.i.baomoi.xdn.vn/m450x/16/06/09/284/19581782/1_146673.jpg', src='http://3.i.baomoi.xdn.vn/m450x/16/06/09/284/19581782/1_146673.jpg.webp', alt="Tại sao ngông cuồng là vậy, 'Thánh chửi' đất Bắc Ninh vẫn chưa bị... 'sờ gáy'?", width='278', height='243')
+            header
+                h2 Tại sao ngông cuồng là vậy, 'Thánh chửi' đất Bắc Ninh vẫn chưa bị... 'sờ gáy'?
+                p.meta
+                  span Pháp Luật Plus
+                  time.friendly(datetime='2016-06-09T12:43:00+07:00') 2 giờ trước
+                p.summary
+                  | Quay clip với nội dung tục tĩu, hình ảnh lăm lăm vũ khí "nóng" trên tay, đe dọa người khác đưa lên Facebook......
+        div.grid-item
+            a(href='/bo-lam-soai-ca-tuan-hung-phan-anh-gian-di-di-lam-tu-thien/r/19582052.epi', title='Bỏ làm "soái ca", Tuấn Hưng, Phan Anh giản dị đi làm từ thiện', target='_blank')
+            figure
+                img.img(data-src='http://3.i.baomoi.xdn.vn/m150/16/06/09/89/19582052/1_113410.jpg', src='http://3.i.baomoi.xdn.vn/m450x/16/06/09/89/19582052/1_113410.jpg.webp', alt='Bỏ làm "soái ca", Tuấn Hưng, Phan Anh giản dị đi làm từ thiện', width='278', height='185')
+            header
+                h2 Bỏ làm "soái ca", Tuấn Hưng, Phan Anh giản dị đi làm từ thiện
+                p.meta
+                  span aFamily
+                  time.friendly(datetime='2016-06-09T13:39:24+07:00') 1 giờ trước
+                p.summary
+                  | Tuấn Hưng và Phan Anh đã đến Quảng Bình trao quà cho những bà con ngư dân gặp hoàn cảnh khó khăn.
+        div.grid-item
+                
+            a(href='/dai-hoc-cong-nghe-cong-bo-diem-xet-tuyen/r/19581663.epi', title='Đại học Công nghệ công bố điểm xét tuyển', target='_blank')
+            figure
+                img.img(data-src='http://1.i.baomoi.xdn.vn/m150/16/06/09/24/19581663/1_200715.jpg', src='http://1.i.baomoi.xdn.vn/m450x/16/06/09/24/19581663/1_200715.jpg.webp', alt='Đại học Công nghệ công bố điểm xét tuyển', width='278', height='156')
+                noscript
+                  | <img src="http://1.i.baomoi.xdn.vn/m150/16/06/09/24/19581663/1_200715.jpg">
+            header
+                h2 Đại học Công nghệ công bố điểm xét tuyển
+                p.meta
+                  span Tiền Phong
+                  time.friendly(datetime='2016-06-09T11:53:00+07:00') 3 giờ trước
+                p.summary
+                  | TPO - Hội đồng Tuyển sinh đại học chính quy năm 2016 của Trường Đại học Công nghệ, Đại học Quốc gia Hà Nội đã...    
+        div.grid-item
+            a(href='/bat-doi-tuong-van-chuyen-32-chiec-tay-chan-gau/r/19582703.epi', title='Bắt đối tượng vận chuyển 32 chiếc tay, chân gấu', target='_blank')
+            figure
+                img.img(data-src='http://3.i.baomoi.xdn.vn/m150/16/06/09/94/19582703/1_150122.jpg', src='http://3.i.baomoi.xdn.vn/m450x/16/06/09/94/19582703/1_150122.jpg.webp', alt='Bắt đối tượng vận chuyển 32 chiếc tay, chân gấu', width='278', height='174')
+                noscript
+                  | <img src="http://3.i.baomoi.xdn.vn/m150/16/06/09/94/19582703/1_150122.jpg">
+            header
+                h2 Bắt đối tượng vận chuyển 32 chiếc tay, chân gấu
+                p.meta
+                  span VOV
+                  time.friendly(datetime='2016-06-09T14:49:00+07:00') 49 phút trước
+                p.summary
+                  | Đối tượng khai nhận vận chuyển thuê bộ phận động vật (nghi là tay, chân gấu) cho một người đàn ông người Trung...
+        div.grid-item
+            a(href='/hoa-khoi-dieu-ngoc-noi-gi-khi-vay-da-hoi-bi-che-ta-toi/r/19582724.epi', title='Hoa khôi Diệu Ngọc nói gì khi váy dạ hội bị chê tả tơi', target='_blank')
+            figure
+                img.img(data-src='http://3.i.baomoi.xdn.vn/m150/16/06/09/206/19582724/1_149985.jpg', src='http://3.i.baomoi.xdn.vn/m450x/16/06/09/206/19582724/1_149985.jpg.webp', alt='Hoa khôi Diệu Ngọc nói gì khi váy dạ hội bị chê tả tơi', width='278', height='417')
+            header
+                h2 Hoa khôi Diệu Ngọc nói gì khi váy dạ hội bị chê tả tơi
+                p.meta
+                  span Eva
+                  time.friendly(datetime='2016-06-09T14:56:00+07:00') 1 giờ trước
+                p.summary
+                  | Hoa khôi Áo dài 2016 tôn trọng những nhận xét, đánh giá của tất cả mọi người.

@@ -1,13 +1,16 @@
 extends ../layout
 block content
+	body#bodyhome
 	if user.root
 		br
-		a(href="/users") manage users
+		a#formmanageruser(href="/users") Manage users
+		// br
+		a#formmanagearticle(href="/article/manage_article") Manage article
 		br
-		a(href="#") manage article
-		br
-	a(href="/users/profile") profile and password setting 
+	a#formsetting(href="/users/profile") Setting 
+	// br
+	//- a#formarticle(href='/article/get_article_writer/#{user._id}') Your article 
+	a#formarticle(href='/article/yourarticles') Your article
+	
 	br
-	a(href="#") your articles
-	br
-	a(href="#") write new artical
+	a#formnewarticle(href="/article/create_article") Write new article

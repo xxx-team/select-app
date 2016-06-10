@@ -27,7 +27,9 @@ mongoose.model('category',category);
 
 var image=new Schema({
 	name:String,
-	path:String
+	path:String,
+	encoding:String,
+	mimetype:String,
 },{collection:'image'});
 mongoose.model('image',image);
 
@@ -37,36 +39,42 @@ var paragraph=new Schema({
 mongoose.model('paragraph',paragraph);
 
 var comment =new Schema({
-	reader:Schema.ObjectId,
+	// reader:Schema.ObjectId,
 	content:String,
-	reply:[Schema.ObjectId],
-	like:Number
+	article:Schema.ObjectId,
+	like:Number,
+	date_added:Date
 },{collection:'comment'});
 mongoose.model('comment',comment);
 
 var reply =new Schema({
 	reader: Schema.ObjectId,
-	content:String
+	content:String,
+	commentid:Schema.ObjectId,
+	date_added:Date
 },{collection:'reply'});
 mongoose.model('reply',reply);
 
-var ArticleContent = new Schema({
-	like:[Schema.ObjectId],
-	paragraphandimage:[Schema.ObjectId],
-	comments:[Schema.ObjectId]
-},{collection:'ArticleContent'});
-mongoose.model('ArticleContent',ArticleContent);
+// var ArticleContent = new Schema({
+// 	// like:[Schema.ObjectId],
+// 	content:String,
+// 	// paragraphandimage:[Schema.ObjectId],
+// 	// comments:[Schema.ObjectId]
+// },{collection:'ArticleContent'});
+// mongoose.model('ArticleContent',ArticleContent);
 
 var article= new Schema({
 	title:String,
 	description:String,
 	likeNumber:Number,
-	commentCount:Number,
 	author:Schema.ObjectId,
+	content:String,
+	penname:String,
 	category:Schema.ObjectId,
 	thumbleImage:Schema.ObjectId,
 	published:Boolean,
-	content:Schema.ObjectId
+	content:Schema.ObjectId,
+	date_added:Date
 },{collection:'article'});
 
 mongoose.model('article',article);

@@ -7,8 +7,8 @@ var bodyParser = require('body-parser');
 var mongo =require('mongodb');
 var mongoose=require('mongoose');
 var session=require('express-session');
-// mongoose.connect('mongodb://thuongdv_58:mothaiba@ds019980.mlab.com:19980/mydatabasehihi');
-mongoose.connect('127.0.0.1:27017')
+mongoose.connect('mongodb://thuongdv_58:mothaiba@ds019980.mlab.com:19980/mydatabasehihi');
+//mongoose.connect('127.0.0.1:27017')
 var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function() {});
@@ -26,6 +26,7 @@ require('./models');
 var routes = require('./routes/index');
 var users = require('./routes/users');
 var usertask = require('./routes/usertask');
+var article = require('./routes/article');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -38,6 +39,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+//app.use('/',express.static(path.join(__dirname, 'uploads')));
 //added db
 app.use(function(req,res,next){
     req.db = db;
@@ -46,7 +48,7 @@ app.use(function(req,res,next){
 app.use('/', routes);
 app.use('/users', users);
 app.use('/user',usertask);
-
+app.use('/article',article);
 
 // We need to use cookies for sessions, so use the cookie parser middleware
 //var MongoStore = require('connect-mongo')(express);

@@ -1,0 +1,64 @@
+extends ../layout
+block content
+    style.
+      .this {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 70%;
+      background-color: #f1f1f1;
+      }
+      li a {
+      display: block;
+      color: #000;
+      padding: 8px 0 8px 16px;
+      text-decoration: none;
+      }
+      /* Change the link color on hover */
+      li a:hover {
+      background-color: #555;
+      color: white;
+      }
+      .marginbutton{
+        margin:3px;
+      }
+    h4 Published:
+    ul.this
+      li
+        a(href='/article/docbao') Hoa khôi Diệu Ngọc nói gì khi váy dạ hội bị chê tả tơi    3 giờ trước
+      li
+        a(href='/article/docbao') Nguyên nhân cá chết ở hồ Hoàng Cầu (Hà Nội) là do thời tiết?    7 giờ trước
+      li
+        a(href='#') Ôtô Ford tông ngựa lên nóc capô, tài xế bị thương 15 giờ trước
+      li
+        a(href='#') 9 cơ quan làm rõ nhiều vấn đề ngoài xe Lexus tư gắn biển xanh    3 giờ trước
+    h4 Not published yet:
+    ul
+      li
+        'Đường cong mềm mại' bốn năm làm được 700 m
+        br
+        button.btn.btn-warning(type='button')
+            span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
+        button.btn.btn-danger.marginbutton(type='button' left-margin:5px) 
+            span.glyphicon.glyphicon-remove(aria-hidden='true') delete this article!
+      li
+        Ôtô tuột dốc hơn 2 km trên cầu Cần Thơ
+        br
+        button.btn.btn-warning(type='button')
+            span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
+        button.btn.btn-danger.marginbutton(type='button' left-margin:5px)
+            span.glyphicon.glyphicon-remove(aria-hidden='true') delete this article!
+      li
+        Máy bay VNA trục trặc, hơn 100 khách qua đêm tại sân bay Lào
+        br
+        button.btn.btn-warning(type='button')
+            span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
+        button.btn.btn-danger.marginbutton(type='button' left-margin:5px)
+            span.glyphicon.glyphicon-remove(aria-hidden='true') delete this article!
+      li
+        Hai thanh niên 'đánh võng' thách thức CSGT bị phạt 7 triệu đồng
+        br
+        button.btn.btn-warning(type='button')
+            span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
+        button.btn.btn-danger.marginbutton(type='button' left-margin:5px)
+            span.glyphicon.glyphicon-remove(aria-hidden='true') delete this article!

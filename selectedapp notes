@@ -6,3 +6,10 @@
 -it's not update session
 -add the published attribute to article , user write a article and wait for admin make inspections
 npm install express-fileupload
+-install chai, mocha ,request for test the js
+npm install --save-dev should
+npm install --save-dev supertest
+install multer for multipart/formdata form
+install nodemon to auto restart server after change
+install goard to reload page automatically
+first and second manage_article

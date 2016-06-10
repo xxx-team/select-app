@@ -5,50 +5,56 @@ block content
 		if alert
 			p=alert
 		if usermanage
-			a(href="/users") back
+			a#back(href="/users") Back
 		else
-			a(href="/user/home") back
+			a#back(href="/user/home") Back
 		if usermanage
 			-var informationID= user._id
 		else
 			-var informationID= ''
-		h3 user profile
 
+		body#bodyuser
 		form#informationform(name='signupform',method='post',action='/users/update/#{informationID}')
+			h3 User profile
 			p Firstname:
-				input#firstname(name='firstname',type='text',placeholder='your firstname',value= '#{user.firstname}')
+				br
+				input#firstname(name='firstname',type='text',placeholder='Firstname',value= '#{user.firstname}')
 			p Lastname:
-				input#lastname(name='lastname',type='text',placeholder='your lastname',value= '#{user.lastname}')
+				br
+				input#lastname(name='lastname',type='text',placeholder='Lastname',value= '#{user.lastname}')
 			p Pen name:
-				input#penname(name='penname',type='text',placeholder='your pen-name',value= '#{user.penname}')
+				br
+				input#penname(name='penname',type='text',placeholder='Pen-name',value= '#{user.penname}')
 			p Email:
-				input#email(name='email',type='text',placeholder='your email',value= '#{user.email}')
-			button#btnSubmit(type="submit") update
-		br
+				br
+				input#email(name='email',type='text',placeholder='Email',value= '#{user.email}')
+			button#btnSubmit(type="submit") Update
+		//br
 		if usermanage
 
 			if user.active
 				form#blocktheuser(name="blockuser",method="post",action="/users/block/#{user._id}")
-					button#btnSubmit(type="submit") block user
-				br
+					button#btnSubmit(type="submit") Block user
+				//br
 			else 
 				form#unblockuser(nane="unblockuser",method="post",action="/users/block/#{user._id}")
-					button#btnSubmit(type="submit") un block user
-				br
+					button#btnSubmit(type="submit") Un block user
+				//br
 			if user.root
 				form#addnewrootuser(name="removerootuser",method="post",action="/users/root/#{user._id}")
-					button#btnSubmit(type="submit") romove form root users
-				br
+					button#btnSubmit(type="submit") Remove form root users
+				//br
 			else
 				form#addnewrootuser(name="addrootuser",method="post",action="/users/root/#{user._id}")
-					button#btnSubmit(type="submit") add new root user
-				br
+					button#btnSubmit(type="submit") Add new root user
+				//br
 		else
 			form#changepasswordform(name='changepasswordform',method='post',action='/users/changepassword')
+				h3 Change password 
 				p Old password:
-					input#oldpassword(name='oldpassword',type='password',placeholder='old password')
+					input#oldpassword(name='oldpassword',type='password',placeholder='Old password')
 				p New password:
-					input#newpassword(name='newpassword',type='password',placeholder='new password')
+					input#newpassword(name='newpassword',type='password',placeholder='New password')
 				p Verify new password:
-					input#retypenewpassword(name='renewpassword',type='password',placeholder='retype new password')
-				button#btnSubmit(type="submit") change password
+					input#retypenewpassword(name='renewpassword',type='password',placeholder='Retype new password')
+				button#btnSubmit(type="submit") Change password

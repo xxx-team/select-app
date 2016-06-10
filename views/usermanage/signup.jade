@@ -1,5 +1,6 @@
 extends ../layout
 block content
+	body#body
 	if error 
 		p=error
 	form#signupform(name='signupform',method='post',action='/users/signup')

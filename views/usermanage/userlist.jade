@@ -1,9 +1,9 @@
 extends ../layout
 
 block content
-    h1.
-        User List
-    ul
+    h1
+        center User List
+    ul#boxuserlist
         each user, i in userlist
             li
                 a(href="/users/profile/#{user.id}")= user.username

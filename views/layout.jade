@@ -3,12 +3,55 @@ html
   head
     title= title
     link(rel='stylesheet', href='/stylesheets/style.css')
-    <link rel="stylesheet", href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js")
   body
+    div.headbar.hide
+        nav.navbar.navbar-inverse
+          .container-fluid
+            .navbar-header
+              a.navbar-brand(href='/user/home') Home
+            ul.nav.navbar-nav
+              li.active
+                a(href='/users/profile') Setting
+              li.active
+                a(href='/users') Manager user
+              li.active
+                a(href='/article/create_article') Write a article
+              li.active
+                a(href='/article/manage_article') Manage article
+              li.active
+                a(href='/article/yourarticles') Your article
+
+            ul.nav.navbar-nav.navbar-right
+                li
+                    if user
+                        a(href="/users/logout")
+                            span.glyphicon.glyphicon-log-in
+                                |Logout
     if user
-        h3="welcome "+user.username
-        a(href="/users/logout") logout
+        h3#welcome="welcome "+user.username
+
+    script(type='text/javascript').
+        $(function(){
+            var path = window.location.pathname;
+            if(path=='/user/home'){
+                {$('#welcome').attr('class','welcomehome');}
+            }
+            else{
+                if(path=='/users/profile'){
+                    {$('#welcome').attr('class','welcomeuser');}
+                }
+                else{
+                    {$('#welcome').attr('class','nonewelcome');}
+                }
+            }
+            if(path=='/users/login'| path=='/users/signup'| path=='/not_allowed'){
+              {$('.hide').attr('class','notloginandsignup');}
+            }
+            else
+               {$('.hide').attr('class','loginandsignup');}
+        });
     block content
 
     <!-- footer --->

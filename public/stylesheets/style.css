@@ -1,6 +1,7 @@
-body {
+#body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #E6E6FA;
 }
 
 #loginform {
@@ -37,7 +38,7 @@ body {
   background-position: -200px 0;
   background-size: 200px 100%;
   background-repeat: no-repeat;
-  color: #0e6252;
+  color: #c7c7cd;
 }
 
 #loginform button {
@@ -105,7 +106,7 @@ body {
   background-position: -200px 0;
   background-size: 200px 100%;
   background-repeat: no-repeat;
-  color: #0e6252;
+  color: #c7c7cd;
 }
 
 #signupform button {
@@ -118,4 +119,364 @@ body {
   color: white;
   margin-left: 25px;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#bodyhome {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/home.jpg");
+  background-size: 100%;
+}
+
+.welcomehome {
+  font-size: 100px;
+  font-variant: small-caps;
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: oblique;
+  margin: 150px auto;
+  padding-left: 350px;
+  color: #ff0000;
+}
+
+.welcomeuser {
+  font-size: 50px;
+  font-variant: small-caps;
+  font-family: Helvetica, Arial, sans-serif;
+  font-style: oblique;
+  margin: 30px 500px;
+  color: #ff0000; 
+}
+
+.nonewelcome {
+  display: none;
+}
+
+#logout {
+  border: none;
+  background: #6666cc;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  color: white;
+  margin: 10px 10px 10px 1250px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#back {
+  border: none;
+  background: #6666cc;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  color: white;
+  margin: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#formmanageruser {
+  border: none;
+  background: #00b7ff;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px 30px;
+  color: white;
+  margin: 10px 0px 0px 500px;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+#formmanagearticle {
+  border: none;
+  background: #00b7ff;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px 30px;
+  color: white;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+#formsetting {
+  border: none;
+  background: #00b7ff;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px 52px;
+  color: white;
+  margin: 10px 0px 0px 500px;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 15px;
+
+}
+
+#formarticle {
+  border: none;
+  background: #00b7ff;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px 39px;
+  color: white;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 15px;
+}
+
+#formnewarticle{
+  border: none;
+  background: #00b7ff;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px 100px;
+  color: white;
+  margin: 10px 0px 0px 500px;
+  box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
+  position: relative;
+  top: 30px;
+}
+
+#bodyuser{
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/home.jpg");
+  background-size: 100%;
+}
+
+#informationform {
+  margin: 20px 20px 10px 110px;
+  padding: 10px 50px;
+  height: 460px;
+  width: 400px;
+  background: #f8f8f8;
+  color: #cc3333;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  text-align: center;
+  font-size: 16px;
+}
+
+#informationform input {
+  margin: 10px 50px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #6666cc;
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  color: #c7c7cd;
+}
+
+#informationform button {
+  border: none;
+  background: #6666cc;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-left: 2px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#changepasswordform {
+  margin: -470px 20px 10px 750px;
+  padding: 10px 50px;
+  height: 460px;
+  width: 400px;
+  background: #f8f8f8;
+  color: #cc3333;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  font-size: 16px;
+}
+
+#changepasswordform input {
+  margin: 10px 50px;
+  width: 200px;
+  display: block;
+  border: none;
+  padding: 10px 0;
+  border-bottom: solid 1px #6666cc;
+  background-position: -200px 0;
+  background-size: 200px 100%;
+  color: #c7c7cd;
+}
+
+#changepasswordform button {
+  border: none;
+  background: #6666cc;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 200px;
+  color: white;
+  margin-left: 2px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#boxuserlist {
+  box-sizing: border-box;
+  width: 200px;
+  height: auto;
+  margin: 20px auto 0;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  padding-bottom: 20px;
+  border-radius: 3px;
+}
+
+#blocktheuser button {
+  box-sizing: border-box;
+  width: 150px;
+  border: none;
+  background: #ff3333;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  color: white;
+  margin: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#unblockuser button {
+  box-sizing: border-box;
+  width: 150px;
+  border: none;
+  background: #ff3333;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  color: white;
+  margin: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+#addnewrootuser button {
+  box-sizing: border-box;
+  width: 150px;
+  border: none;
+  background: #ff3333;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  color: white;
+  margin: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+#addnewrootuser button {
+  box-sizing: border-box;
+  width: 150px;
+  border: none;
+  background: #ff3333;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  color: white;
+  margin: 10px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+.headbar {
+  width: 100%;
+  height: 100px;
+}
+
+.notloginandsignup{
+  display: none;
+}
+
+.loginandsignup{
+  display: block;
+}
+
+#bodywrite {
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-image: url("../images/writepage.jpg");
+  background-size: 100%;
+  background-repeat: none;
+}
+
+#writearticle {
+  color: #ff3300;
+  margin-left: 600px;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-style: oblique;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#title {
+  box-sizing: border-box;
+  width: 1200px;
+  height: auto;
+  margin: 5px 0px 5px 100px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  padding-bottom: 15px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#description {
+  box-sizing: border-box;
+  width: 1200px;
+  height: auto;
+  margin: 5px 0px 5px 100px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  padding-bottom: 30px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#thumbleImage {
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 300px;
+  color: white;
+  margin-left: 1050px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+}
+
+#select {
+  box-sizing: border-box;
+  width: 100px;
+  height: auto;
+  margin-left: 1200px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  padding: 6px;
+  border-radius: 3px;
+  background: #f0f0f0;
+}
+
+#paragraph {
+  box-sizing: border-box;
+  width: 1200px;
+  height: auto;
+  margin: 5px 0px 5px 100px;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  padding-bottom: 200px;
+  border-radius: 3px;
+  background: #f0f0f0;
+  font-size: 14px;
+  font-family: "Times New Roman", Times, serif;
+}
+
+/*#add {
+
+}
+*/
+#submit {
+  border: none;
+  background: #ff3333;
+  cursor: pointer;
+  border-radius: 3px;
+  padding: 6px;
+  width: 60px;
+  color: white;
+  margin-left: 1240px;
+  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+  font-size: 14px;
 }

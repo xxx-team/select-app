@@ -1,0 +1,10 @@
+extends layout
+block content
+    h3 write a article
+    form#createform(name='createform',method='post',enctype="multipart/form-data",action='/article/cool-profile')
+        input#thumbleImage(name='thumbnail',type='file',placeholder='thumbleImage')
+        br
+        button#submit(name='submit',type='submit')
+
+    img(src= "/uploads/3.png")
+    p

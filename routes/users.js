@@ -37,16 +37,22 @@ router.post('/signup', function(req, res){
     var lastname=req.body.lastname;
     var email=req.body.email;
     var penname=req.body.penname;
+    if(username=='' | password=='' | penname=='' | email=='' | lastname =='' | firstname=='')
+    {   
+        console.log('empty');
+        var err=' all fields are required!';
+        res.render('usermanage/signup',{error:err});
+    }
     if (password !== password_confirmation) {
         var err = 'The passwords do not match';
-        res.render('signup',{error:err});
+        res.render('usermanage/signup',{error:err});
     } else {
         var query      = {username:username};
         // make sure this username does not exist already
         Users.findOne(query, function(err, user){
           if (user) {
             err = 'The username you entered already exists';
-            res.render('signup',{error:err});
+            res.render('usermanage/signup',{error:err});
           } else {
             // create the new user
             Users.create({  firstname: firstname,
