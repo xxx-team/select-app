@@ -1,0 +1,112 @@
+extends ../layout2
+block content
+    //- p= article.
+    header
+        .header
+          .fb-button
+            #fb-root
+            script.
+              (function (d, s, id) {
+              var js, fjs = d.getElementsByTagName(s)[0];
+              if (d.getElementById(id)) return;
+              js = d.createElement(s);
+              js.id = id;
+              js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.5";
+              fjs.parentNode.insertBefore(js, fjs);
+              }(document, 'script', 'facebook-jssdk'));
+            .fb-like(data-layout='button_count', data-href='https://web.facebook.com/B%C3%A1o-M%E1%BB%9Bi-H%C3%B4m-Nay-1011030838965011/?ref=ts&fref=ts/')
+            .fb-share-button(data-href='https://web.facebook.com/B%C3%A1o-M%E1%BB%9Bi-H%C3%B4m-Nay-1011030838965011/?ref=ts&fref=ts/', data-layout='button')
+          a.h1(href='https://web.facebook.com/B%C3%A1o-M%E1%BB%9Bi-H%C3%B4m-Nay-1011030838965011/?ref=ts&fref=ts') Báo Mới 
+          //- p Kho ebook
+          .navbar-home
+            nav.nav-links
+              a.home(href='/') Trang chủ
+              a.types(href='/hot') Hot
+              a.types(href='/reads/xa-hoi') Xã Hội
+              a.types(href='/reads/the-gioi') Thế Giới
+              a.types(href='/reads/van-hoa') Văn Hóa
+              a.types(href='/reads/kinh-te') Kinh Tế
+              a.types(href='/reads/giao-duc') Giáo Dục
+              a.types(href='/reads/the-thao') Thể Thao
+              a.types(href='/reads/khoa-hoc-cong-nghe') Khoa Học - Công Nghệ
+            .search-button
+              .input-group
+                input#search.form-control(type='text', placeholder='Tìm kiếm...', style='font-size: 16px')
+                span.input-group-btn
+                  button#search-button.btn.btn-default(type='button')
+                    i.fa.fa-search(style='color:#FFF')
+      body.graybackground
+        script.
+          window.fbAsyncInit = function() {
+          FB.init({
+          appId      : '148060622272869',
+          xfbml      : true,
+          version    : 'v2.6'
+          });
+          };
+          (function(d, s, id){
+          var js, fjs = d.getElementsByTagName(s)[0];
+          if (d.getElementById(id)) {return;}
+          js = d.createElement(s); js.id = id;
+          js.src = "//connect.facebook.net/en_US/sdk.js";
+          fjs.parentNode.insertBefore(js, fjs);
+          }(document, 'script', 'facebook-jssdk'));
+        .main.graybackground
+          div.articlebox.graybackground.preventspillout
+            div.box1.whitebackground
+              if article
+                p.label.label-info=article.category
+                .timer=article.date_added
+                h1=article.title
+                h3=article.description
+                p=article.content
+                h5.penname= 'WriteBy..'+article.penname
+                .fb-like(data-href='http://127.0.0.1:3000/article/get_article/#{article._id}', data-layout='box_count', data-action='like', data-show-faces='true', data-share='true')
+                
+                #fb-root
+                script.
+                  (function(d, s, id) {
+                  var js, fjs = d.getElementsByTagName(s)[0];
+                  if (d.getElementById(id)) return;
+                  js = d.createElement(s); js.id = id;
+                  js.src = "//connect.facebook.net/vi_VN/sdk.js#xfbml=1&version=v2.6&appId=148060622272869";
+                  fjs.parentNode.insertBefore(js, fjs);
+                  }(document, 'script', 'facebook-jssdk'));
+                .fb-comments(data-href='http://127.0.0.1:3000/article/#{article._id}', data-numposts='5')
+            div.box2.whitebackground
+              .whitebackground
+                for tin,i in tinlienquan
+                  div.grid-item.threecolum.maxheigh
+                      figure
+                          img.img(src='#',class='image#{tin.thumbleImage}')   
+                      div.shortdescribe
+                        h5= tin.title
+                        a(href="/article/get_article/#{tin._id}") XEM BÀI NÀY
+                        .viewComments
+                          span.views(title='Views')= tin.view
+                          span.comments(title='Comments') 2
+                  script.
+                    $(document).ready(function(){
+                      var imageid='#{tin.thumbleImage}';
+                      $.get('/article/get_image_name/'+imageid,function(data){
+                        $('.image'+imageid).attr('src','/images/upload/'+data);
+                      })
+                    });
+          div.sub-box
+            each item,i in mostview
+              div.small
+                figure
+                    img.img(src='#',class='image#{item.thumbleImage}')
+                header
+                    h5=item.title
+                    a(href="/article/get_article/#{item._id}") XEM BÀI NÀY
+                    .viewComments
+                      span.views(title='Views')= item.view
+                      span.comments(title='Comments') 2
+              script.
+                $(document).ready(function(){
+                  var imageid='#{item.thumbleImage}';
+                  $.get('/article/get_image_name/'+imageid,function(data){
+                    $('.image'+imageid).attr('src','/images/upload/'+data);
+                  })
+                });

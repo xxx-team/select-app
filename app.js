@@ -50,28 +50,6 @@ app.use('/users', users);
 app.use('/user',usertask);
 app.use('/article',article);
 
-// We need to use cookies for sessions, so use the cookie parser middleware
-//var MongoStore = require('connect-mongo')(express);
-// app.use(expressSession({
-//     secret: 'a4f8071f-c873-4447-8ee2',
-//     cookie: { maxAge: 2628000000 },
-//     store: new (require('express-sessions'))({
-//         storage: 'mongodb',
-//         instance: mongoose, // optional 
-//         host: 'localhost', // optional 
-//         port: 27017, // optional 
-//         db: 'test', // optional 
-//         collection: 'sessions', // optional 
-//         expire: 86400 // optional 
-//     })
-//   //   store: new MongoStore({
-//   //   db: 'selected_app',
-//   //   host: '127.0.0.1',
-//   //   port: 3355
-//   // })
-// }));
-
-
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   var err = new Error('Not Found');

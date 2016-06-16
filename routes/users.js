@@ -40,7 +40,7 @@ router.post('/signup', function(req, res){
     if(username=='' | password=='' | penname=='' | email=='' | lastname =='' | firstname=='')
     {   
         console.log('empty');
-        var err=' all fields are required!';
+        var err=' All fields are required!';
         res.render('usermanage/signup',{error:err});
     }
     if (password !== password_confirmation) {
@@ -118,7 +118,7 @@ router.get('/', requireRootUser,function(req, res){
     if(err){
       res.render('error',{error:err});
     }
-    res.render('usermanage/userlist',{userlist:users});
+    res.render('usermanage/userlist',{userlist:users,user:req.session.user});
     // res.send({userlist:users});  
   })
 });

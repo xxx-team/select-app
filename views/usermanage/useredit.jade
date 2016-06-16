@@ -30,25 +30,7 @@ block content
 				input#email(name='email',type='text',placeholder='Email',value= '#{user.email}')
 			button#btnSubmit(type="submit") Update
 		//br
-		if usermanage
-
-			if user.active
-				form#blocktheuser(name="blockuser",method="post",action="/users/block/#{user._id}")
-					button#btnSubmit(type="submit") Block user
-				//br
-			else 
-				form#unblockuser(nane="unblockuser",method="post",action="/users/block/#{user._id}")
-					button#btnSubmit(type="submit") Un block user
-				//br
-			if user.root
-				form#addnewrootuser(name="removerootuser",method="post",action="/users/root/#{user._id}")
-					button#btnSubmit(type="submit") Remove form root users
-				//br
-			else
-				form#addnewrootuser(name="addrootuser",method="post",action="/users/root/#{user._id}")
-					button#btnSubmit(type="submit") Add new root user
-				//br
-		else
+		if !usermanage
 			form#changepasswordform(name='changepasswordform',method='post',action='/users/changepassword')
 				h3 Change password 
 				p Old password:

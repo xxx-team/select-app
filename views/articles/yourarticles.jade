@@ -1,16 +1,14 @@
 extends ../layout
 block content
+  body#bodywrite
     style.
       .this {
       list-style-type: none;
-      margin: 0;
-      padding: 0;
       width: 70%;
       background-color: #f1f1f1;
       }
       li a {
       display: block;
-      color: #000;
       padding: 8px 0 8px 16px;
       text-decoration: none;
       }
@@ -22,43 +20,59 @@ block content
       .marginbutton{
         margin:3px;
       }
-    h4 Published:
-    ul.this
-      li
-        a(href='/article/docbao') Hoa khôi Diệu Ngọc nói gì khi váy dạ hội bị chê tả tơi    3 giờ trước
-      li
-        a(href='/article/docbao') Nguyên nhân cá chết ở hồ Hoàng Cầu (Hà Nội) là do thời tiết?    7 giờ trước
-      li
-        a(href='#') Ôtô Ford tông ngựa lên nóc capô, tài xế bị thương 15 giờ trước
-      li
-        a(href='#') 9 cơ quan làm rõ nhiều vấn đề ngoài xe Lexus tư gắn biển xanh    3 giờ trước
-    h4 Not published yet:
+    script(type='text/javascript').     
+        var datefunction = function(inputdate){
+            var datecurrent=new Date($.now());
+            var date= new Date(inputdate);
+            var seconds= (datecurrent-date)/1000;
+            var outtime=''
+            if(seconds<3600)
+                outtime= Math.round(seconds/60) + ' phút trước';
+            else if(seconds<86400)
+                outtime= Math.round(seconds/3600)+ ' giờ trước';
+            else if(seconds<86400*5)
+                outtime=Math.round(seconds/86400)+' ngày trước';
+            else
+                outtime=date;
+            return outtime;
+        }
+    h4#fontarticle Published:
+    ul#fontarticle.this
+      each article,i in articles
+        -var classnumber=i%2;
+        if article.published
+          li(class='background'+classnumber)
+            a(href='/article/get_article/#{article._id}')= article.title 
+              time.friendly.time(datetime='2016-06-09T11:53:00+07:00' class='time#{article._id}',style="float:right;margin-right:10%;")
+          script.
+            $(document).ready(function(){
+              var articleid='#{article._id}';
+              var datecreted='#{article.date_added}'
+              $('.time'+articleid).text(datefunction(datecreted));
+            });
+    h4#fontarticle Not published yet:
     ul
-      li
-        'Đường cong mềm mại' bốn năm làm được 700 m
-        br
-        button.btn.btn-warning(type='button')
-            span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
-        button.btn.btn-danger.marginbutton(type='button' left-margin:5px) 
-            span.glyphicon.glyphicon-remove(aria-hidden='true') delete this article!
-      li
-        Ôtô tuột dốc hơn 2 km trên cầu Cần Thơ
-        br
-        button.btn.btn-warning(type='button')
-            span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
-        button.btn.btn-danger.marginbutton(type='button' left-margin:5px)
-            span.glyphicon.glyphicon-remove(aria-hidden='true') delete this article!
-      li
-        Máy bay VNA trục trặc, hơn 100 khách qua đêm tại sân bay Lào
-        br
-        button.btn.btn-warning(type='button')
-            span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
-        button.btn.btn-danger.marginbutton(type='button' left-margin:5px)
-            span.glyphicon.glyphicon-remove(aria-hidden='true') delete this article!
-      li
-        Hai thanh niên 'đánh võng' thách thức CSGT bị phạt 7 triệu đồng
-        br
-        button.btn.btn-warning(type='button')
-            span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
-        button.btn.btn-danger.marginbutton(type='button' left-margin:5px)
-            span.glyphicon.glyphicon-remove(aria-hidden='true') delete this article!
+      each article,i in articles
+        if !article.published
+          li#fontarticle
+            p=article.title
+            button.btn.btn-warning.marginbutton(type='button')
+                span.glyphicon.glyphicon-pencil(aria-hidden='true') edit
+            button.btn.btn-danger.marginbutton(type='button',class="deletearticle#{article._id}") 
+                span.glyphicon.glyphicon-trash(aria-hidden='true') delete this article!
+          br
+          script.
+            $(document).ready(function(){
+              var articleid='#{article._id}';
+              $(".deletearticle"+articleid).click(function(event){
+                    $.post( 
+                      "/article/delete_article/"+articleid,
+                      {},
+                      function(data) {
+                        //- $('.container'+articleid).css('display','none');
+                        location.reload();
+                      }
+                   );
+                   location.reload();
+                });
+            });

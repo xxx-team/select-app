@@ -70,11 +70,13 @@ var article= new Schema({
 	author:Schema.ObjectId,
 	content:String,
 	penname:String,
-	category:Schema.ObjectId,
+	category:String,
 	thumbleImage:Schema.ObjectId,
 	published:Boolean,
-	content:Schema.ObjectId,
-	date_added:Date
+	content:String,
+	date_added:Date,
+	view:Number,
+	thumbleImageName:String
 },{collection:'article'});
 
 mongoose.model('article',article);

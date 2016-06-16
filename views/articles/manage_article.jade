@@ -1,60 +1,108 @@
 extends ../layout
 block content
+    body#bodywrite
     style.
         .marginbutton{
         margin:3px;
         }
+    script(type='text/javascript').     
+        var datefunction = function(inputdate){
+            var datecurrent=new Date($.now());
+            var date= new Date(inputdate);
+            var seconds= (datecurrent-date)/1000;
+            var outtime=''
+            if(seconds<3600)
+                outtime= Math.round(seconds/60) + ' phút trước';
+            else if(seconds<86400)
+                outtime= Math.round(seconds/3600)+ ' giờ trước';
+            else if(seconds<86400*5)
+                outtime=Math.round(seconds/86400)+' ngày trước';
+            else
+                outtime=date;
+            return outtime;
+        }
 
-    .container
-        h2 Nguyên nhân cá chết ở hồ Hoàng Cầu (Hà Nội) là do thời tiết?
-        .panel.panel-default
-            .panel-heading.hideshowbutton.first
-                time.friendly(datetime='2016-06-09T11:53:00+07:00') 3 giờ trước
-            .panel-body.first
-                p.
-                  Được hỏi về cảm nghĩ ra sao khi chiếc váy dạ hội màu hồng mà Diệu Ngọc mặc trong đêm đăng quang Hoa khôi Áo dài 2016 không nhận được đánh giá cao của khán giả. Diệu Ngọc đã bày tỏ quan điểm cá nhân tôn trọng sự đa chiều của dư luận cũng như người thiết kế chiếc váy:
-                p.
-                  "Trong nghệ thuật, chắc chắn mỗi người đều có những điểm nhìn riêng và Ngọc luôn tôn trọng điều đó. Trước khi bước vào đêm chung kết, các thí sinh đã có được buổi gặp gỡ và trao đổi với NTK Audrey Hiếu Nguyễn thật kĩ để anh có thể thực hiện những thiết kế thật phù hợp với sắc vóc, tính cách và mong muốn của từng người.
-                p.
-                    Dù thời gian khá gấp rút nhưng anh và ekip đã cố gắng hết sức để có thể hỗ trợ tối đa cho từng thí sinh. Ngọc và những cô gái còn lại luôn cảm ơn tình cảm và nhiệt huyết nơi anh. Một bộ váy không chỉ đẹp ở hình thức bên ngoài mà còn đẹp ở tấm lòng và tài năng mà nhà thiết kế đã tạo ra chúng."
-                p.
-                    Trở thành hoa khôi và sắp tới đại diện Việt Nam đi thi Hoa hậu Thế giới, chắc chắn Diệu Ngọc cần thay đổi rất nhiều, phong cách thời trang là điều quan trọng.
-                p.
-                    "Những lời chê bai, nhận xét trái chiều từ phái khán giả sẽ trở thành động lực để Ngọc có thể cố gắng thay đổi và hoàn thiện mình hơn trong phong cách thời trang cá nhân, đặc biệt khi đến với cuộc thi Hoa hậu Thế giới năm nay. Ngọc cũng đang thực sự mong chờ một hình ảnh mới chỉn chu hơn của bản thân trong thời gian tới."
-                p.
-                    Tuy vậy tân hoa khôi vẫn bình tĩnh nhận những quan điểm khác nhau từ dư luận và tôn trọng công sức của người thiết kế.
+        var showhidefunction=function(id){
+                alert('sdgisadgsad')
+                
+            }
+    h3 
+    each article,i in articles
+        if !article.published
+            #fontarticle.container(class='container#{article._id}')
+                h2=article.title
+                .panel.panel-default
+                    .panel-heading.hideshowbutton(class='showbutton#{article._id}')
+                        time.friendly.time(datetime='2016-06-09T11:53:00+07:00' class='time#{article._id}')
+                    div.panel-body(class='content#{article._id}')=article.content
 
-        button.btn.btn-success.marginbutton(type='button') publish it!
-        button.btn.btn-danger.marginbutton(type='button' left-margin:5px) delete this article!
-        br
-        br
+                button.btn.btn-success.marginbutton(type='button',class='publish#{article._id}') publish it!
+                button.btn.btn-danger.marginbutton(type='button' ,class='deletear#{article._id}') delete this article!
+                br
+                br
+            script.
+                $(document).ready(function() {
+                var articleid='#{article._id}';
+                var datecreted='#{article.date_added}'
+                $('.time'+articleid).text(datefunction(datecreted));
+                $(".showbutton"+articleid).click(function(event){
+                    $(".content"+articleid).toggle();
+                });
+                $(".deletear"+articleid).click(function(event){
+                    $.post( 
+                      "/article/delete_article/"+articleid,
+                      {},
+                      function(data) {
+                        //- $('.container'+articleid).css('display','none');
+                        location.reload();
+                      }
+                
+                   );
+                   location.reload();
+                });
+                $(".publish"+articleid).click(function(event){
+                    $.post( 
+                      "/article/published/"+articleid,
+                      {},
+                      function(data) {
+                        //- $('.container'+articleid).css('display','none');
+                        location.reload();
+                      }
+                   );
+                   location.reload();
+                });
 
-    .container
-        h2 Được hỏi về cảm nghĩ ra sao khi chiếc váy dạ hội màu hồng
-        .panel.panel-default
-            .panel-heading.hideshowbutton.second
-                time.friendly(datetime='2016-06-09T11:53:00+07:00') 3 giờ trước
-            .panel-body.second
-                p.
-                  Được hỏi về cảm nghĩ ra sao khi chiếc váy dạ hội màu hồng mà Diệu Ngọc mặc trong đêm đăng quang Hoa khôi Áo dài 2016 không nhận được đánh giá cao của khán giả. Diệu Ngọc đã bày tỏ quan điểm cá nhân tôn trọng sự đa chiều của dư luận cũng như người thiết kế chiếc váy:
-                p.
-                  "Trong nghệ thuật, chắc chắn mỗi người đều có những điểm nhìn riêng và Ngọc luôn tôn trọng điều đó. Trước khi bước vào đêm chung kết, các thí sinh đã có được buổi gặp gỡ và trao đổi với NTK Audrey Hiếu Nguyễn thật kĩ để anh có thể thực hiện những thiết kế thật phù hợp với sắc vóc, tính cách và mong muốn của từng người.
-                p.
-                    Dù thời gian khá gấp rút nhưng anh và ekip đã cố gắng hết sức để có thể hỗ trợ tối đa cho từng thí sinh. Ngọc và những cô gái còn lại luôn cảm ơn tình cảm và nhiệt huyết nơi anh. Một bộ váy không chỉ đẹp ở hình thức bên ngoài mà còn đẹp ở tấm lòng và tài năng mà nhà thiết kế đã tạo ra chúng."
-                p.
-                    Trở thành hoa khôi và sắp tới đại diện Việt Nam đi thi Hoa hậu Thế giới, chắc chắn Diệu Ngọc cần thay đổi rất nhiều, phong cách thời trang là điều quan trọng.
-                p.
-                    "Những lời chê bai, nhận xét trái chiều từ phái khán giả sẽ trở thành động lực để Ngọc có thể cố gắng thay đổi và hoàn thiện mình hơn trong phong cách thời trang cá nhân, đặc biệt khi đến với cuộc thi Hoa hậu Thế giới năm nay. Ngọc cũng đang thực sự mong chờ một hình ảnh mới chỉn chu hơn của bản thân trong thời gian tới."
-                p.
-                    Tuy vậy tân hoa khôi vẫn bình tĩnh nhận những quan điểm khác nhau từ dư luận và tôn trọng công sức của người thiết kế.
-
-        button.btn.btn-success.marginbutton(type='button') publish it!
-        button.btn.btn-danger.marginbutton(type='button' left-margin:5px) delete this article!
-    script
+                });
+    each article,i in articles
+        if article.published
+            #fontarticle.container(class='container#{article._id}')
+                h2=article.title
+                .panel.panel-default
+                    .panel-heading.hideshowbutton(class='showbutton#{article._id}')
+                        time.friendly.time(datetime='2016-06-09T11:53:00+07:00' class='time#{article._id}')
+                    div.panel-body(class='content#{article._id}')=article.content
+                button.btn.btn-danger.marginbutton(type='button' ,class='deletear#{article._id}') delete this article!
+                br
+                br
+            script.
+                $(document).ready(function() {
+                    var articleid='#{article._id}';
+                    var datecreted='#{article.date_added}'
+                    $('.time'+articleid).text(datefunction(datecreted));
+                    $(".showbutton"+articleid).click(function(event){
+                    $(".content"+articleid).toggle();
+                });
+                $(".deletear"+articleid).click(function(event){
+                    $.post( 
+                      "/article/delete_article/"+articleid,
+                      {},
+                      function(data) {
+                        //- $('.container'+articleid).css('display','none');
+                        location.reload();
+                      }
+                   );
+                   location.reload();
+                });
+                });
+    script.
         $(".panel-body").hide();
-        $(".hideshowbutton.first").click(function(){
-        $(".panel-body.first").toggle();
-        });
-        $(".hideshowbutton.second").click(function(){
-        $(".panel-body.second").toggle();
-        });

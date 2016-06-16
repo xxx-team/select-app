@@ -2,7 +2,8 @@ extends ../layout
 block content
 	body#body
 	if error 
-		p=error
+		#error
+			p=error
 	form#signupform(name='signupform',method='post',action='/users/signup')
 		h3 Register
 		input#firstname(name='firstname',type='text',placeholder='Firstname')

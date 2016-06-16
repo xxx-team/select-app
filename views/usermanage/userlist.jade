@@ -1,11 +1,63 @@
 extends ../layout
 
 block content
-    h1
-        center User List
-    ul#boxuserlist
+  body#bodyuserlist
+    h1#userlist User List
+    style.
+      .marginbutton{
+        float:right;
+        margin-left:5px;
+        margin-top:10px;
+        margin-right:10px;
+      }
+    div.this
         each user, i in userlist
-            li
-                a(href="/users/profile/#{user.id}")= user.username
-            form(action='/users/delete/#{user._id}', method='post' ,name='delete')
-                button.btn.btn-danger(type='submit') Delete
+            if !user.root
+                script(type='text/javascript').
+                    $(document).ready(function() {
+                        var userid ='#{user._id}';
+                        $(".delete"+userid).click(function(event){
+                           $.post( 
+                              "/users/delete/"+userid,
+                              { name: "Zara" },
+                              function(data) {
+                              location.reload();
+                              }
+                           );
+                                
+                        });  
+                        $(".btnSubmitblock"+userid).click(function(event){
+                            $.post( 
+                              "/users/block/"+userid,
+                              {},
+                              function(data) {
+                              location.reload();
+                              }
+                           );
+                        });  
+                        $(".addroot"+userid).click(function(event){
+                            $.post( 
+                              "/users/root/"+userid,
+                              {},
+                              function(data) {
+                              location.reload();
+                              }
+                           );
+                        });  
+                    });   
+                .useritem
+                    h4(style="width:3%;display:inline-block;margin-left:5px;")= user.username
+                    button.btn.btn-danger.marginbutton(type='submit',class='delete#{user._id}')
+                        span.glyphicon.glyphicon-trash Remove 
+                    if user.active
+                        button#btnSubmit.btn.btn-danger.marginbutton(type="submit" ,class='btnSubmitblock#{user._id}' )
+                            span.glyphicon.glyphicon-lock Block 
+                    else 
+                        button#btnSubmit.btn.btn-primary.marginbutton(type="submit",class='btnSubmitblock#{user._id}') 
+                            span.glyphicon.glyphicon-lock Un block user 
+                    if user.root
+                        button#btnSubmit.btn.btn-danger.marginbutton(type="submit",class='addroot#{user._id}') 
+                            span.glyphicon.glyphicon-remove Remove root users
+                    else
+                        button#btnSubmit.btn.btn-primary.marginbutton(type="submit",class='addroot#{user._id}') 
+                            span.glyphicon.glyphicon-plus-sign Add root user

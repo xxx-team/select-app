@@ -6,17 +6,17 @@
 
 #loginform {
   box-sizing: border-box;
-	width: 260px;
-	margin: 100px auto 0;
+	width: 20%;
+	margin: 5% auto 0;
 	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-	padding-bottom: 40px;
+	padding-bottom: 3%;
   border-radius: 3px;
 }
 
 #loginform h3 {
 	box-sizing: border-box;
-	padding: 35px 100px;
-	height: 100px;
+	padding: 12% 35%;
+	height: 5%;
   width: 100%;
   background: #6666cc;
   color: white;
@@ -27,16 +27,16 @@
 }
 
 #loginform input {
-  margin: 40px 25px;
-  width: 200px;
+  margin: 16% 10%;
+  width: 80%;
   display: block;
   border: none;
-  padding: 10px 0;
+  padding: 5% 0;
   border-bottom: solid 1px #6666cc;
   transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #6666cc 4%);
-  background-position: -200px 0;
-  background-size: 200px 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 100%, #6666cc 4%);
+  background-position: -80% 0;
+  background-size: 80% 100%;
   background-repeat: no-repeat;
   color: #c7c7cd;
 }
@@ -46,24 +46,25 @@
   background: #6666cc;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px;
-  width: 200px;
+  padding: 3%;
+  width: 80%;
   color: white;
-  margin-left: 25px;
+  margin-left: 10%;
+  margin-bottom: 5%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 #signup {
 	color: #00b7ff;
-	padding: 5px 65px;
+	padding: 5% 25%;
 }
 
 #messages {
 	box-sizing: border-box;
-	margin: 20px auto -70px;
-	padding: 10px 20px;
-	height: 40px;
-  width: 260px;
+	margin: 3% 40%;
+	padding: 1%;
+	height: 6%;
+  width: 20%;
   background: #ffdfe5;
   color: #cc3333;
   border-radius: 3px;
@@ -74,17 +75,17 @@
 
 #signupform {
 	box-sizing: border-box;
-	width: 260px;
-	margin: 10px auto 0;
+	width: 20%;
+	margin: 5% auto 0;
 	box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-	padding-bottom: 40px;
+	padding-bottom: 3%;
   border-radius: 3px;
 }
 
 #signupform h3 {
 	box-sizing: border-box;
-	padding: 30px 80px;
-	height: 100px;
+	padding: 12% 32%;
+	height: 5%;
   width: 100%;
   background: #00b7ff;
   color: white;
@@ -95,16 +96,16 @@
 }
 
 #signupform input {
-	margin: 25px 25px;
-  width: 200px;
+	margin: 16% 10%;
+  width: 80%;
   display: block;
   border: none;
-  padding: 10px 0;
+  padding: 5% 0;
   border-bottom: solid 1px #00b7ff;
   transition: all 0.3s cubic-bezier(0.64, 0.09, 0.08, 1);
-  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 96%, #00b7ff 4%);
-  background-position: -200px 0;
-  background-size: 200px 100%;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 100%, #00b7ff 4%);
+  background-position: -80% 0;
+  background-size: 80% 100%;
   background-repeat: no-repeat;
   color: #c7c7cd;
 }
@@ -114,51 +115,50 @@
   background: #00b7ff;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px;
-  width: 200px;
+  padding: 3%;
+  width: 80%;
   color: white;
-  margin-left: 25px;
+  margin-left: 10%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
+#error {
+  box-sizing: border-box;
+  margin: 2% 40%;
+  padding: 1%;
+  height: 8%;
+  width: 20%;
+  background: #ffdfe5;
+  color: #cc3333;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
+
 #bodyhome {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 140% "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("../images/home.jpg");
   background-size: 100%;
 }
 
-.welcomehome {
-  font-size: 100px;
-  font-variant: small-caps;
-  font-family: Helvetica, Arial, sans-serif;
-  font-style: oblique;
-  margin: 150px auto;
-  padding-left: 350px;
-  color: #ff0000;
+#bodyuser, #bodyuserlist {
+  font: 140% "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-size: 100%;
+  background-color: #F0F2F5;
 }
 
-.welcomeuser {
-  font-size: 50px;
+.welcomehome {
+  font-size: 800%;
   font-variant: small-caps;
   font-family: Helvetica, Arial, sans-serif;
   font-style: oblique;
-  margin: 30px 500px;
-  color: #ff0000; 
+  margin: 10% auto;
+  padding-left: 28%;
+  color: #ff0000;
 }
 
 .nonewelcome {
   display: none;
-}
-
-#logout {
-  border: none;
-  background: #6666cc;
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 6px;
-  color: white;
-  margin: 10px 10px 10px 1250px;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 #back {
@@ -166,9 +166,9 @@
   background: #6666cc;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px;
+  padding: 0.8%;
   color: white;
-  margin: 10px;
+  margin: 1%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -177,9 +177,9 @@
   background: #00b7ff;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px 30px;
+  padding: 0.4% 3%;
   color: white;
-  margin: 10px 0px 0px 500px;
+  margin: 1% 0 0 40%;
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
   position: relative;
 }
@@ -189,7 +189,8 @@
   background: #00b7ff;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px 30px;
+  padding: 0.4% 3.3%;
+  margin: 1% 30% 0 0;
   color: white;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   position: relative;
@@ -200,13 +201,12 @@
   background: #00b7ff;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px 52px;
+  padding: 0.4% 4.5%;
   color: white;
-  margin: 10px 0px 0px 500px;
+  margin: 1% 0 0 40%;
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   top: 15px;
-
 }
 
 #formarticle {
@@ -214,7 +214,8 @@
   background: #00b7ff;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px 39px;
+  padding: 0.4% 4.2%;
+  margin: 1% 30% 0 0;
   color: white;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
   position: relative;
@@ -226,42 +227,36 @@
   background: #00b7ff;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px 100px;
+  padding: 0.4% 9.2%;
   color: white;
-  margin: 10px 0px 0px 500px;
+  margin: 1% 0 0 40%;
   box-shadow: 0 6px 6px 0 rgba(0, 0, 0, 0.2);
   position: relative;
   top: 30px;
 }
 
-#bodyuser{
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-  background-image: url("../images/home.jpg");
-  background-size: 100%;
-}
-
 #informationform {
-  margin: 20px 20px 10px 110px;
-  padding: 10px 50px;
-  height: 460px;
-  width: 400px;
+  margin: 5% 10% 5% 10%;
+  padding: 2% 4%;
+  height: 40%;
+  width: 30%;
   background: #f8f8f8;
   color: #cc3333;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
   border-radius: 3px;
   text-align: center;
-  font-size: 16px;
+  font-size: 100%;
 }
 
 #informationform input {
-  margin: 10px 50px;
-  width: 200px;
+  margin: 5% 18%;
+  width: 70%;
   display: block;
   border: none;
-  padding: 10px 0;
+  padding: 2% 0;
   border-bottom: solid 1px #6666cc;
-  background-position: -200px 0;
-  background-size: 200px 100%;
+  background-position: -20% 0;
+  background-size: 20% 100%;
   color: #c7c7cd;
 }
 
@@ -270,35 +265,35 @@
   background: #6666cc;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px;
-  width: 200px;
+  padding: 2%;
+  width: 35%;
   color: white;
-  margin-left: 2px;
+  margin-left: 5%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 #changepasswordform {
-  margin: -470px 20px 10px 750px;
-  padding: 10px 50px;
-  height: 460px;
-  width: 400px;
+  margin: -37% 10% 5% 60%;
+  padding: 2% 4%;
+  height: 50%;
+  width: 30%;
   background: #f8f8f8;
   color: #cc3333;
   border-radius: 3px;
   box-shadow: 0 2px 5px 2px rgba(0, 0, 0, 0.2);
   text-align: center;
-  font-size: 16px;
+  font-size: 100%;
 }
 
 #changepasswordform input {
-  margin: 10px 50px;
-  width: 200px;
+  margin: 5% 18%;
+  width: 70%;
   display: block;
   border: none;
-  padding: 10px 0;
+  padding: 2% 0;
   border-bottom: solid 1px #6666cc;
-  background-position: -200px 0;
-  background-size: 200px 100%;
+  background-position: -20% 0;
+  background-size: 20% 100%;
   color: #c7c7cd;
 }
 
@@ -307,70 +302,10 @@
   background: #6666cc;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px;
-  width: 200px;
+  padding: 2%;
+  width: 45%;
   color: white;
-  margin-left: 2px;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-}
-
-#boxuserlist {
-  box-sizing: border-box;
-  width: 200px;
-  height: auto;
-  margin: 20px auto 0;
-  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-  padding-bottom: 20px;
-  border-radius: 3px;
-}
-
-#blocktheuser button {
-  box-sizing: border-box;
-  width: 150px;
-  border: none;
-  background: #ff3333;
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 6px;
-  color: white;
-  margin: 10px;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-}
-
-#unblockuser button {
-  box-sizing: border-box;
-  width: 150px;
-  border: none;
-  background: #ff3333;
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 6px;
-  color: white;
-  margin: 10px;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-}
-#addnewrootuser button {
-  box-sizing: border-box;
-  width: 150px;
-  border: none;
-  background: #ff3333;
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 6px;
-  color: white;
-  margin: 10px;
-  box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-}
-#addnewrootuser button {
-  box-sizing: border-box;
-  width: 150px;
-  border: none;
-  background: #ff3333;
-  cursor: pointer;
-  border-radius: 3px;
-  padding: 6px;
-  color: white;
-  margin: 10px;
+  margin-left: 2%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
@@ -387,45 +322,52 @@
   display: block;
 }
 
-#bodywrite {
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+#bodywritearticle {
+  font: 140% "Lucida Grande", Helvetica, Arial, sans-serif;
   background-image: url("../images/writepage.jpg");
   background-size: 100%;
   background-repeat: none;
 }
 
+#bodywrite {
+  font: 140% "Lucida Grande", Helvetica, Arial, sans-serif;
+  background-size: 100%;
+  background-repeat: none;
+  background-color: #F0F2F5;
+}
+
 #writearticle {
   color: #ff3300;
-  margin-left: 600px;
-  margin-bottom: 20px;
-  font-size: 30px;
+  margin-left: 40%;
+  margin-bottom: 2%;
+  font-size: 160%;
   font-style: oblique;
   font-family: "Times New Roman", Times, serif;
 }
 
 #title {
   box-sizing: border-box;
-  width: 1200px;
+  width: 88%;
   height: auto;
-  margin: 5px 0px 5px 100px;
+  margin: 1% 0 1% 7%;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-  padding-bottom: 15px;
+  padding-bottom: 1%;
   border-radius: 3px;
   background: #f0f0f0;
-  font-size: 14px;
+  font-size: 100%;
   font-family: "Times New Roman", Times, serif;
 }
 
 #description {
   box-sizing: border-box;
-  width: 1200px;
+  width: 88%;
   height: auto;
-  margin: 5px 0px 5px 100px;
+  margin: 1% 0 1% 7%;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-  padding-bottom: 30px;
+  padding-bottom: 2%;
   border-radius: 3px;
   background: #f0f0f0;
-  font-size: 14px;
+  font-size: 100%;
   font-family: "Times New Roman", Times, serif;
 }
 
@@ -433,50 +375,93 @@
   border: none;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px;
-  width: 300px;
+  padding: 1%;
+  width: 22%;
   color: white;
-  margin-left: 1050px;
+  margin-left: 75%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
 }
 
 #select {
   box-sizing: border-box;
-  width: 100px;
+  width: 8%;
   height: auto;
-  margin-left: 1200px;
+  margin-left: 87%;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-  padding: 6px;
+  padding: 0.5%;
   border-radius: 3px;
   background: #f0f0f0;
 }
 
 #paragraph {
   box-sizing: border-box;
-  width: 1200px;
+  width: 88%;
   height: auto;
-  margin: 5px 0px 5px 100px;
+  margin: 1% 0 1% 7%;
   box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
-  padding-bottom: 200px;
+  padding-bottom: 12%;
   border-radius: 3px;
   background: #f0f0f0;
-  font-size: 14px;
+  font-size: 100%;
   font-family: "Times New Roman", Times, serif;
 }
 
-/*#add {
-
-}
-*/
 #submit {
   border: none;
   background: #ff3333;
   cursor: pointer;
   border-radius: 3px;
-  padding: 6px;
-  width: 60px;
+  padding: 0.5%;
+  width: 5%;
   color: white;
-  margin-left: 1240px;
+  margin-left: 90%;
   box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
-  font-size: 14px;
+  font-size: 100%;
+}
+.useritem {
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  width: 35%;
+  height: auto;
+  margin: 1% auto 0;
+  box-shadow: 2px 2px 5px 2px rgba(0, 0, 0, 0.2);
+  padding-bottom: 1.5%;
+  border-radius: 3px;
+}
+
+.background0{
+  background:#e6e2e2;
+}
+.background1{
+  background:#d2caca;
+}
+.this{
+  margin-left: 4%;
+}
+#blocktheuser{
+  float: right;
+}
+#unblockuser{
+  float: right;
+}
+#addnewrootuser{
+  float: right;
+}
+#removerootuser{
+  float: right;
+}
+
+#userlist {
+  color: #ff3300;
+  margin-left: 50%;
+  margin-bottom: 2%;
+  font-size: 180%;
+  font-style: oblique;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#fontarticle {
+  color: #0A0A0A;
+  font-style: oblique;
+  font-family: "Times New Roman", Times, serif;
 }
