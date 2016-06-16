@@ -7,3 +7,4 @@ run:
 
 
 -link heroku app: https://whattodowhat.herokuapp.com
+-link for writer and manager : https://whattodowhat.herokuapp.com/users/login
