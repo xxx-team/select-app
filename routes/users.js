@@ -65,7 +65,7 @@ router.post('/signup', function(req, res){
                             active:true},
                             function(err,user){
                                 if (err) {
-                                    res.render('signup', {error: err});
+                                    res.render('usermanage/signup', {error: err});
                                 } else {
                                         // This way subsequent requests will know the user is logged in.
                                         req.session.user = user;
